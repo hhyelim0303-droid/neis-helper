@@ -215,7 +215,7 @@
 
 <div class="container">
 
-  <!-- BLOCK 1: API 키 등록 (가장 눈에 띄는 라벤더 강조 블록) -->
+  <!-- BLOCK 1: API 키 등록 (라벤더 파스텔 강조 블록) -->
   <section class="block-card card-api">
     <div class="block-header">
       <h2 class="block-title">
@@ -236,8 +236,8 @@
       <div>
         <label for="modelSelect" style="color:#4c1d95;">AI 생성 모델 선택</label>
         <select id="modelSelect">
-          <option value="gemini-2.5-flash">gemini-2.5-flash (빠른 속도 · 경제적 비용 · 추천)</option>
-          <option value="gemini-2.5-pro">gemini-2.5-pro (심화 문장력 · 정교한 서술)</option>
+          <option value="gemini-3-flash-preview">gemini-3-flash-preview (빠른 속도 · 경제적 비용 · 추천)</option>
+          <option value="gemini-3.1-pro-preview">gemini-3.1-pro-preview (최신 고성능 · 정교한 서술)</option>
         </select>
       </div>
     </div>
@@ -629,7 +629,6 @@
       textarea.value = textarea.value.trim() + "\n" + line;
     }
 
-    // 과목명 입력칸도 자동으로 동기화
     const cleanSubj = subj.split(' ')[0];
     document.getElementById('subjectName').value = cleanSubj;
 
@@ -720,7 +719,6 @@
     saveTempSession();
     renderStudents();
 
-    // 입력 폼 비우기
     document.getElementById('quickId').value = "";
     document.getElementById('quickName').value = "";
     document.getElementById('quickTraits').value = "";
@@ -728,7 +726,6 @@
     const newIdx = students.length - 1;
     showToast(`${newStudent.studentId} ${newStudent.name} 학생이 아래 세특 보드에 반영되었습니다.`);
 
-    // 스크롤을 새 학생 카드로 부드럽게 이동
     setTimeout(() => {
       const cardEl = document.getElementById(`student_card_${newIdx}`);
       if (cardEl) cardEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
