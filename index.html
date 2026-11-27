@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>보안 학생부 작성 워크스페이스 (나이스 엑셀 원본 연동 통합판)</title>
+  <title>보안 학생부 작성 워크스페이스 (2022 개정 5개 교과 · 나이스 엑셀 연동)</title>
   <script src="https://cdn.sheetjs.com/xlsx-0.20.2/package/dist/xlsx.full.min.js"></script>
   <style>
     :root {
@@ -151,7 +151,7 @@
     }
 
     .preset-controls {
-      display: grid; grid-template-columns: 150px 180px 1fr auto; gap: 8px; align-items: end;
+      display: grid; grid-template-columns: 165px 175px 1fr auto; gap: 8px; align-items: end;
     }
     @media (max-width: 960px) { .preset-controls { grid-template-columns: 1fr; } }
 
@@ -220,7 +220,7 @@
 <body>
 
 <header>
-  <h1>🎨 보안 학생부 작성 워크스페이스 <span class="badge-secure">원본 엑셀 양식 그대로 내보내기 · 비식별 전송</span></h1>
+  <h1>🎨 보안 학생부 작성 워크스페이스 <span class="badge-secure">2022 개정 5개 교과 · 원본 엑셀 연동 · 비식별 전송</span></h1>
   <div style="display:flex; gap:8px; flex-wrap:wrap;">
     <button class="btn-outline btn-sm" onclick="downloadTemplate()">📥 세분화 엑셀 양식</button>
     <button class="btn-mint btn-sm" onclick="exportToExcel()">📤 원본 엑셀에 반영해 저장</button>
@@ -341,7 +341,7 @@
         <span class="step-pill">STEP 3</span>
         📚 생기부 영역 · 목표 분량(KB) · 2022 개정 성취기준 설정
       </h2>
-      <span style="font-size:0.82rem; color:#15803d; font-weight:700;">국어 · 영어 · 과학 (중1 ~ 중3) 성취기준 기본 탑재</span>
+      <span style="font-size:0.82rem; color:#15803d; font-weight:700;">과학 · 수학 · 국어 · 영어 · 역사 (중1 ~ 중3) 성취기준 기본 탑재</span>
     </div>
 
     <div class="grid-3">
@@ -370,7 +370,7 @@
 
       <div id="subjectBox">
         <label>과목명 (교과 세특 선택 시)</label>
-        <input type="text" id="subjectName" value="과학" placeholder="예: 과학, 국어, 영어" />
+        <input type="text" id="subjectName" value="과학" placeholder="예: 과학, 수학, 국어, 영어, 역사" />
       </div>
     </div>
 
@@ -411,7 +411,7 @@
       <div id="customPresetForm" class="custom-preset-form">
         <div>
           <label style="font-size:0.76rem;">교과명</label>
-          <input type="text" id="newPresetSubject" placeholder="예: 과학, 사회" />
+          <input type="text" id="newPresetSubject" placeholder="예: 사회, 도덕" />
         </div>
         <div>
           <label style="font-size:0.76rem;">학년 구분</label>
@@ -419,7 +419,7 @@
         </div>
         <div>
           <label style="font-size:0.76rem;">성취기준 코드</label>
-          <input type="text" id="newPresetCode" placeholder="예: [9과05-01]" />
+          <input type="text" id="newPresetCode" placeholder="예: [9사01-01]" />
         </div>
         <div>
           <label style="font-size:0.76rem;">성취기준 문장</label>
@@ -504,6 +504,36 @@
         { code: "[9과21-01]", text: "연주시차를 이용해 별까지의 거리를 구하는 원리를 이해하고, 별의 밝기와 표면 온도의 관계를 설명할 수 있다." }
       ]
     },
+    "수학 (2022 개정)": {
+      "중학교 1학년": [
+        { code: "[9수01-01]", text: "소인수분해의 뜻을 알고, 자연수를 소인수분해 할 수 있으며, 이를 이용하여 최대공약수와 최소공배수를 구할 수 있다." },
+        { code: "[9수01-03]", text: "양수와 음수, 정수와 유리수의 개념을 이해하고, 수의 대소 관계를 판단하며 사칙계산의 원리를 이해하고 계산할 수 있다." },
+        { code: "[9수02-01]", text: "다양한 상황을 문자를 사용한 식으로 나타내어 그 유용성을 인식하고, 식의 값을 구할 수 있다." },
+        { code: "[9수02-03]", text: "일차방정식의 풀이 원리를 이해하고, 이를 활용하여 실생활의 다양한 문제를 해결할 수 있다." },
+        { code: "[9수02-05]", text: "순서쌍과 좌표를 이해하고, 정비례와 반비례 관계를 표, 식, 그래프로 나타내어 그 성질을 탐구할 수 있다." },
+        { code: "[9수03-01]", text: "점, 선, 면, 각의 성질을 이해하고, 평행선과 동위각·엇각의 성질 및 삼각형의 합동 조건을 탐구할 수 있다." },
+        { code: "[9수03-04]", text: "다각형과 부채꼴, 다면체와 회전체의 성질을 이해하고, 겉넓이와 부피를 구할 수 있다." },
+        { code: "[9수04-01]", text: "자료를 줄기와 잎 그림, 도수분포표, 히스토그램, 도수분포다각형으로 나타내고 해석하며, 상대도수를 활용해 자료의 분포를 비교할 수 있다." }
+      ],
+      "중학교 2학년": [
+        { code: "[9수01-06]", text: "순환소수의 뜻을 알고, 유리수와 순환소수의 관계를 이해하며 분수를 순환소수로, 순환소수를 분수로 나타낼 수 있다." },
+        { code: "[9수02-07]", text: "지수법칙을 이해하고, 단항식과 다항식의 사칙계산 원리를 이해하여 식을 간단히 할 수 있다." },
+        { code: "[9수02-09]", text: "일차부등식과 미지수가 2개인 연립일차방정식을 풀고, 이를 활용하여 실생활 문제를 해결할 수 있다." },
+        { code: "[9수02-12]", text: "일차함수의 개념을 이해하고 그래프의 성질을 탐구하며, 일차함수와 미지수가 2개인 일차방정식의 관계를 이해할 수 있다." },
+        { code: "[9수03-06]", text: "이등변삼각형과 직각삼각형, 삼각형의 외심과 내심, 여러 가지 사각형의 성질을 탐구하고 정당화할 수 있다." },
+        { code: "[9수03-09]", text: "도형의 닮음의 뜻과 삼각형의 닮음 조건을 이해하고, 피타고라스 정리를 탐구하여 문제 해결에 활용할 수 있다." },
+        { code: "[9수04-04]", text: "경우의 수와 확률의 개념을 이해하고, 확률의 기본 성질을 바탕으로 다양한 상황의 확률을 구할 수 있다." }
+      ],
+      "중학교 3학년": [
+        { code: "[9수01-08]", text: "제곱근의 뜻과 성질을 알고 무리수의 개념을 이해하며, 근호를 포함한 식의 사칙계산을 할 수 있다." },
+        { code: "[9수02-15]", text: "다항식의 곱셈과 인수분해의 원리를 이해하고, 이를 활용하여 복잡한 수의 계산이나 식의 변형을 수행할 수 있다." },
+        { code: "[9수02-17]", text: "이차방정식의 풀이 원리를 이해하고, 판별식을 통해 근의 개수를 판별하며 실생활 문제를 해결할 수 있다." },
+        { code: "[9수02-19]", text: "이차함수의 뜻을 알고 이차함수 그래프의 꼭짓점, 축, 최댓값과 최솟값 등의 성질을 탐구할 수 있다." },
+        { code: "[9수03-11]", text: "삼각비의 뜻을 알고 간단한 삼각비의 값을 구하며, 이를 활용하여 거리나 높이 등의 실생활 문제를 해결할 수 있다." },
+        { code: "[9수03-13]", text: "원의 현과 접선에 대한 성질 및 원주각의 성질을 탐구하고, 이를 논리적으로 정당화할 수 있다." },
+        { code: "[9수04-06]", text: "중앙값, 최빈값, 평균과 분산, 표준편차의 의미를 이해하고, 산점도를 통해 두 변량 사이의 상관관계를 분석할 수 있다." }
+      ]
+    },
     "국어 (2022 개정)": {
       "중학교 1학년": [
         { code: "[9국01-01]", text: "화자의 의도와 관점을 추론하며 듣고, 타당한 근거를 들어 자신의 의견을 논리적으로 말할 수 있다." },
@@ -551,6 +581,27 @@
         { code: "[9영03-06]", text: "다양한 매체의 영어 글을 읽고 필자의 주장과 근거의 타당성을 파악할 수 있다." },
         { code: "[9영04-05]", text: "자신의 진로나 사회적 관심사에 대해 서론·본론·결론의 형식을 갖추어 짧은 에세이를 쓸 수 있다." }
       ]
+    },
+    "역사 (2022 개정)": {
+      "중학교 1학년": [
+        { code: "[9역01-01]", text: "역사의 의미와 역사 학습의 목적을 이해하고, 다양한 역사 자료를 비판적으로 분석하여 탐구할 수 있다." },
+        { code: "[9역01-02]", text: "한반도와 만주 지역의 구석기·신석기·청동기 문화의 특징을 비교하고, 고조선의 성립과 발전을 설명할 수 있다." },
+        { code: "[9역02-01]", text: "고구려, 백제, 신라, 가야의 성장 과정과 대외 관계를 파악하고, 삼국 문화의 특징과 교류를 탐구할 수 있다." },
+        { code: "[9역02-03]", text: "신라의 삼국 통일 과정과 통일 신라 및 발해의 발전 모습을 이해하고, 남북국 시대의 역사적 의의를 설명할 수 있다." }
+      ],
+      "중학교 2학년": [
+        { code: "[9역03-01]", text: "고려의 후삼국 통일과 통치 체제 정비 과정을 파악하고, 다원적 국제 질서 속에서 전개된 대외 교류를 설명할 수 있다." },
+        { code: "[9역03-03]", text: "무신 정변 이후 사회 변동과 대몽 항쟁의 전개 과정을 이해하고, 고려 문화의 특징과 가치를 탐구할 수 있다." },
+        { code: "[9역04-01]", text: "조선의 건국과 유교적 통치 체제의 정비 과정을 이해하고, 민족 문화의 발달과 과학 기술의 성취를 설명할 수 있다." },
+        { code: "[9역04-03]", text: "왜란과 호란의 극복 과정을 파악하고, 조선 후기 정치 운영의 변화와 상품 화폐 경제의 발달, 신분제 변동을 탐구할 수 있다." }
+      ],
+      "중학교 3학년": [
+        { code: "[9역05-01]", text: "흥선 대원군의 개혁 정치와 강화도 조약 이후 개항의 전개 과정을 이해하고, 개화 정책과 위정척사·동학 농민 운동을 분석할 수 있다." },
+        { code: "[9역05-03]", text: "대한제국의 수립과 광무개혁, 애국 계몽 운동과 의병 투쟁을 파악하고, 국권 피탈 과정과 근대 문물 수용의 영향을 탐구할 수 있다." },
+        { code: "[9역06-01]", text: "일제의 식민 통치 방식의 변화를 이해하고, 3·1 운동과 대한민국 임시 정부를 비롯한 국내외 다양한 독립운동의 전개 과정을 설명할 수 있다." },
+        { code: "[9역07-01]", text: "8·15 광복과 대한민국 정부 수립, 6·25 전쟁과 민주화·산업화 과정을 이해하고, 평화 통일과 동아시아 평화를 위한 과제를 탐색할 수 있다." },
+        { code: "[9역08-01]", text: "산업 혁명과 제국주의, 두 차례의 세계 대전과 냉전 체제의 전개 과정을 이해하고, 현대 세계의 주요 갈등과 협력 사례를 분석할 수 있다." }
+      ]
     }
   };
 
@@ -559,7 +610,6 @@
   let hasUnsavedWork = false;
   let apiKeyVisible = false;
 
-  // 업로드한 원본 엑셀 메타데이터 (창 닫으면 함께 소멸)
   let excelMeta = {
     hasOriginal: false,
     fileName: "",
@@ -768,7 +818,6 @@
       return;
     }
 
-    // 원본 엑셀 양식이 있으면 해당 컬럼 구조를 따르는 빈 행 객체 생성
     const baseRow = {};
     if (excelMeta.hasOriginal && excelMeta.headers.length > 0) {
       excelMeta.headers.forEach(h => { baseRow[h] = ""; });
@@ -827,7 +876,6 @@
     setTimeout(() => toast.classList.remove('show'), 2600);
   }
 
-  // NEIS 바이트 및 KB 환산 (1KB = 1,000 Byte)
   function getNeisBytes(str) {
     if (!str) return 0;
     let bytes = 0;
@@ -937,7 +985,6 @@
       const firstSheetName = workbook.SheetNames[0];
       const firstSheet = workbook.Sheets[firstSheetName];
 
-      // 원본 헤더 순서 추출
       const aoa = XLSX.utils.sheet_to_json(firstSheet, { header: 1, defval: "" });
       if (aoa.length < 2) {
         alert("엑셀 파일에 헤더와 학생 데이터가 없습니다.");
@@ -947,7 +994,6 @@
       const rawHeaders = aoa[0].map(h => String(h).trim()).filter(h => h !== "");
       const rows = XLSX.utils.sheet_to_json(firstSheet, { defval: "" });
 
-      // 학번/번호, 이름/성명, 세특 결과 컬럼 자동 판별
       const idKey = rawHeaders.find(k => k.includes('학번') || k.includes('번호')) || rawHeaders[0];
       const nameKey = rawHeaders.find(k => k.includes('이름') || k.includes('성명')) || rawHeaders[1];
       const persKey = rawHeaders.find(k => k.includes('성격') || k.includes('성향'));
@@ -955,7 +1001,6 @@
       const actKey = rawHeaders.find(k => k.includes('활동') || k.includes('탐구') || k.includes('특성') || k.includes('내용'));
       const growKey = rawHeaders.find(k => k.includes('성장') || k.includes('역량') || k.includes('평가'));
 
-      // 나이스 업로드용 기존 결과 열 자동 탐지 (세부능력, 세특, 특기사항, 초안, 결과 등)
       const existingDraftKey = rawHeaders.find(k =>
         k.includes('세부능력') || k.includes('세특') || k.includes('특기사항') || k.includes('초안') || k.includes('결과') || k.includes('종합의견')
       );
@@ -971,7 +1016,6 @@
       };
 
       const uploaded = rows.map((row, idx) => {
-        // 원본 행의 모든 열과 값을 그대로 복제 보관
         const preservedRow = {};
         rawHeaders.forEach(h => {
           preservedRow[h] = row[h] !== undefined ? row[h] : "";
@@ -992,7 +1036,6 @@
         };
       });
 
-      // 새 엑셀 업로드 시 기존 명단과 합칠지 교체할지 확인 (기존 데이터가 있을 때만)
       if (students.length > 0 && confirm("이미 화면에 입력된 학생 목록이 있습니다.\n[확인]을 누르면 새 엑셀 명단으로 교체하고, [취소]를 누르면 기존 목록 아래에 이어 붙입니다.")) {
         students = uploaded;
       } else {
@@ -1035,7 +1078,6 @@
     showToast("모든 데이터가 즉시 파기되었습니다.");
   }
 
-  // 원본 엑셀 표 구조 그대로 세특 결과를 채워 저장 (나이스 일괄 업로드 호환)
   function exportToExcel() {
     if (students.length === 0) {
       alert("내보낼 학생 데이터가 없습니다.");
@@ -1047,7 +1089,6 @@
     let finalHeaders = [];
 
     if (excelMeta.hasOriginal && excelMeta.headers.length > 0) {
-      // 원본 엑셀 헤더 순서를 100% 유지하고, 대상 열이 기존에 없던 새 열이면 맨 뒤에 추가
       finalHeaders = [...excelMeta.headers];
       if (!finalHeaders.includes(targetCol)) {
         finalHeaders.push(targetCol);
@@ -1059,7 +1100,6 @@
           rowObj[h] = (s.originalRow && s.originalRow[h] !== undefined) ? s.originalRow[h] : "";
         });
 
-        // 학번/이름을 웹앱에서 수정했다면 원본 열에도 동기화 반영
         if (excelMeta.idCol && finalHeaders.includes(excelMeta.idCol)) {
           rowObj[excelMeta.idCol] = s.studentId;
         }
@@ -1067,12 +1107,10 @@
           rowObj[excelMeta.nameCol] = s.name;
         }
 
-        // 생성된 세특 문장을 지정된 나이스 열에 삽입
         rowObj[targetCol] = s.output || "";
         return rowObj;
       });
     } else {
-      // 엑셀 업로드 없이 수동 입력만 한 경우 깔끔한 표준 양식으로 생성
       finalHeaders = ["학번", "이름", targetCol, "성격_성향", "수업태도", "수업중활동", "성장_역량"];
       exportRows = students.map(s => ({
         "학번": s.studentId,
